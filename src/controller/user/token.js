@@ -3,14 +3,11 @@ const jwt = require('jsonwebtoken');
 const accessT = async (req, user) => {
     const secret = req.app.get("jwt-secret");
     const token = jwt.sign ({
-        userId: userId,
+        userId: user.userId,
     },
     secret,
     {
         expiresIn: '7d'
-    }, (err, token) => {
-        if (err) rejects(err)
-        resolve(token)
     });
     return token
 }
