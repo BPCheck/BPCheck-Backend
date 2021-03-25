@@ -1,4 +1,4 @@
-import jwt from 'jsonwebtoken';
+const jwt = require('jsonwebtoken');
 
 const accessT = async (req, user) => {
     const secret = req.app.get("jwt-secret");
