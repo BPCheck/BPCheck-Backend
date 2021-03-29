@@ -13,11 +13,10 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
         },
         id: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             primaryKey: true,
             unique: true,
             autoincrement: true,
-            allowNull: false,
         },
         date: {
             type: DataTypes.STRING(50),
@@ -28,4 +27,4 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
     });
-}
+};
