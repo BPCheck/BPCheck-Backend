@@ -22,6 +22,10 @@ module.exports = (sequelize, DataTypes) => {
         date: {
             type: DataTypes.STRING(50),
             allowNull: false,
-        }
+        },
+        pulse: {
+            type: DataTypes.STRING(10),
+            allowNull: false
+        },
     });
 }
