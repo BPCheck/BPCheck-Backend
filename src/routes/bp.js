@@ -2,7 +2,7 @@ const router = require('express')();
 const controller = require('../controller/bp/controller');
 const auth = require('../middlewares/auth');
 
-router.post("/", auth.authMiddleware, controller.createBp);
-// router.delete("/:id", auth.authMiddleware, controller.deleteBp);
+router.post("/check", auth, controller.createBp);
+router.delete("/:id", auth, controller.deleteBp);
 
 module.exports = router;

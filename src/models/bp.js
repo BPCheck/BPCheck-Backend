@@ -15,7 +15,6 @@ module.exports = (sequelize, DataTypes) => {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            unique: true,
             autoincrement: true,
         },
         date: {
@@ -26,5 +25,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(10),
             allowNull: false
         },
+    },{
+        timestamps: false,
     });
 };
