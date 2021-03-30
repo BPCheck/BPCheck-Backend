@@ -1,13 +1,13 @@
 const { Hospital } = require('../../models');
 
 const createHospital = async (req, res, next) => {
-    const { hName, hNumber } = req.body;
+    const { hospitalName, hospitalNumber } = req.body;
     const userId = req.decode.userId;
 
     try {
-        const hospital = await Hospital.findOne({ where: {hName} });
+        const hospital = await Hospital.findOne({ where: {hospitalName} });
         if (hospital) throw new Error('이미 등록한 전적이 있음');
-        await Hospital.create({ hName, hNumber, userId });
+        await Hospital.create({ hospitalName, hospitalNumber, userId });
         res.status(200).end();
     } catch (e) {
         console.log(e.message);
