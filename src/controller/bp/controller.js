@@ -17,9 +17,13 @@ const createBp = async (req, res, next) => {
 
 const deleteBp = async (req, res, next) => {
     try {
-        Bp.delete(req.params.id, res);
+        console.log(req.params);
+        await Bp.destroy({ 
+            where: { id : req.params.id }
+        });
         res.status(200).end();
     } catch (e) {
+        console.log(e.message);
         res.status(409).end();
     }
 };
