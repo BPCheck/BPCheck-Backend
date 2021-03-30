@@ -4,5 +4,7 @@ const auth = require('../middlewares/auth');
 
 router.post("/register", auth, controller.createHospital);
 router.delete("/:id", auth, controller.deleteHospital);
+router.put("/select/:id", auth, controller.selectHospital);
+router.put('/deselect/:id', auth, controller.deselectHospital);
 
 module.exports = router;

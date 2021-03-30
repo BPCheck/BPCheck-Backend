@@ -28,7 +28,39 @@ const deleteHospital = async (req, res, next) => {
     }
 };
 
+const selectHospital = async (req, res, next) => {
+
+    try {
+        await Hospital.update({    
+            isSelect : true,
+          }, {
+            where: { id : req.params.id }
+        });
+        res.status(200).end();
+    }catch (e) {
+        console.log(e.message);
+        res.status(409).end();
+    }
+};
+
+const deselectHospital = async (req, res, next) => {
+
+    try {
+        await Hospital.update({    
+            isSelect : false,
+          }, {
+            where: { id : req.params.id }
+        });
+        res.status(200).end();
+    }catch (e) {
+        console.log(e.message);
+        res.status(409).end();
+    }
+};
+
 module.exports = {
     createHospital,
     deleteHospital,
+    selectHospital,
+    deselectHospital,
 };
