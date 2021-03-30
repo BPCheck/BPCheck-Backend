@@ -28,7 +28,83 @@ const deleteBp = async (req, res, next) => {
     }
 };
 
+const getLowBp = async (req, res, next) => {
+    const userId = req.decode.userId;
+
+    try {
+        const data = await Bp.findAll({
+            attributes: ['lowBp', 'date'],
+            order: [['date', 'DESC']],
+            where: {
+                userId: userId
+            }
+        });
+        res.status(200).json({ data });
+    } catch (e) {
+        console.log(e.message);
+        res.status(409).end();
+    }
+};
+
+const getHighBp = async (req, res, next) => {
+    const userId = req.decode.userId;
+
+    try {
+        const data = await Bp.findAll({
+            attributes: ['highBp', 'date'],
+            order: [['date', 'DESC']],
+            where: {
+                userId: userId
+            }
+        });
+        res.status(200).json({ data });
+    } catch (e) {
+        console.log(e.message);
+        res.status(409).end();
+    }
+};
+
+const getAllBp = async (req, res, next) => {
+    const userId = req.decode.userId;
+
+    try {
+        const data = await Bp.findAll({
+            attributes: ['pulse', 'lowBp', 'highBp', 'date'],
+            order: [['date', 'DESC']],
+            where: {
+                userId: userId
+            }
+        });
+        res.status(200).json({ data });
+    } catch (e) {
+        console.log(e.message);
+        res.status(409).end();
+    }
+};
+
+const getMain = async (req, res, next) => {
+    const userId = req.decode.userId;
+
+    try {
+        const data = await Bp.findAll({
+            attributes: ['pulse', 'lowBp', 'highBp', 'date'],
+            order: [['date', 'DESC']],
+            where: {
+                userId: userId
+            }
+        });
+        res.status(200).json({ data });
+    } catch (e) {
+        console.log(e.message);
+        res.status(409).end();
+    }
+};
+
+
 module.exports = { 
     createBp, 
     deleteBp, 
+    getLowBp,
+    getHighBp,
+    getAllBp,
 };
