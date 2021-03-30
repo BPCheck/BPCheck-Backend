@@ -32,6 +32,11 @@ const selectHospital = async (req, res, next) => {
 
     try {
         await Hospital.update({    
+            isSelect : false,
+          }, {
+            where: { isSelect : isSelect = true }
+        });
+        await Hospital.update({    
             isSelect : true,
           }, {
             where: { id : req.params.id }

@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(10),
             allowNull: false,
         },
-        hostipalNumber: {
+        hospitalNumber: {
             type: DataTypes.STRING(10),
             allowNull: false,
         },
