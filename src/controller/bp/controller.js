@@ -107,4 +107,4 @@ module.exports = {
     getLowBp,
     getHighBp,
     getAllBp,
-};
+}

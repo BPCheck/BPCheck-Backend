@@ -29,7 +29,7 @@ const signUp = async ( req, res, next) => {
         const encodePassword = await passwordEncoding(password);
         console.log('password skip');
         if (!userId || !password) errorGenerator ( { message: "invalid input", statusCode: 400});
-        await User.create({ userId, password: encodePasswonrd, name });
+        await User.create({ userId, password: encodePassword, name });
         res.status(200).end();
     } catch (e) {
         console.log('error');
