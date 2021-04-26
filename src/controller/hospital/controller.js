@@ -15,6 +15,24 @@ const createHospital = async (req, res, next) => {
     }
 };
 
+const getHospital = async (req, res, next) => {
+    const userId = req.decode.userId;
+
+    try {
+        const data = await Hospital.findAll({
+            attributes: ['hospitalName', 'hospitalNumber', 'isSelect', 'id'],
+            order: [['id', 'ASC']],
+            where: {
+                userId: userId
+            }
+        });
+        res.status(200).json({ data });
+    }catch (e) {
+        console.log(e.message);
+        res.status(409).end();
+    }
+};
+
 const deleteHospital = async (req, res, next) => {
     try {
         console.log(req.params);
@@ -68,4 +86,5 @@ module.exports = {
     deleteHospital,
     selectHospital,
     deselectHospital,
+    getHospital,
 };
