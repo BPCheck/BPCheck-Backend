@@ -69,7 +69,7 @@ const getAllBp = async (req, res, next) => {
 
     try {
         const data = await Bp.findAll({
-            attributes: ['pulse', 'lowBp', 'highBp', 'date'],
+            attributes: ['pulse', 'lowBp', 'highBp', 'date', 'id'],
             order: [['date', 'DESC']],
             where: {
                 userId: userId
