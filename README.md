@@ -2,4 +2,4 @@
 BPCheck-Backend Version
 
 ## API 명세서
-https://39812.gitbook.io/bpcheck/
+https://bpcheck.gitbook.io/bpcheck/
