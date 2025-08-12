@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "12567186-1f299f0a-9dd1-4bea-8c17-e2778141c554",
 		"name": "Example-Postman",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "http://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
