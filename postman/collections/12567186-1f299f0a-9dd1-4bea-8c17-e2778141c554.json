@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "12567186-1f299f0a-9dd1-4bea-8c17-e2778141c554",
 		"name": "Example-Postman",
-		"schema": "http://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -74,7 +74,77 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"id": "12567186-0b1ca2c2-9292-484c-80e0-bbdb7c917887",
+							"name": "3.0 Domestic Label Payment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "authorization",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"roles\": [\r\n        {\r\n            \"roleName\": \"PAYER\",\r\n            \"CRID\": \"XXXXXXXXXX\",\r\n            \"MID\": \"XXXXXXXXXX\",\r\n            \"manifestMID\": \"XXXXXXXXXX\",\r\n            \"accountType\": \"EPS\",\r\n            \"accountNumber\": \"XXXXXXXXXX\"\r\n        },\r\n        {\r\n            \"roleName\": \"LABEL_OWNER\",\r\n            \"CRID\": \"XXXXXXXXXX\",\r\n            \"MID\": \"XXXXXXXXXX\",\r\n            \"manifestMID\": \"XXXXXXXXXX\",\r\n            \"accountType\": \"EPS\",\r\n            \"accountNumber\": \"XXXXXXXXXX\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://apis.usps.com/payments/v3/payment-authorization",
+									"protocol": "https",
+									"host": [
+										"apis",
+										"usps",
+										"com"
+									],
+									"path": [
+										"payments",
+										"v3",
+										"payment-authorization"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "Somansa Integrated Network Agent"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html"
+								},
+								{
+									"key": "Location",
+									"value": "http://"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1788"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "<script>\n\t\t\t\tfunction getIP(){return '10.25.198.167';}\n\t\t\t\tfunction getURL(){return 'apis.usps.com';}\n\t\t\t\tfunction getCategory(){return '생활_가정';}\n\t\t\t\tfunction getPolicyName(){return 'WhiteList외_차단';}\n\t\t\t\tfunction getUserID(){return 'moblie_10';}\n\t\t\t\tfunction getFullURL(){return 'apis.usps.com/payments/v3/payment-authorization';}\n\t\t\t\tfunction getOneDepthURL(){return 'apis.usps.com/payments/';}\n\t\t\t\tfunction getKeyword(){return '';}\n\t\t\t\t</script>\n<html>\n    <head>\n        <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">\n    </head>\n    <body bgcolor=#ffffff>\n        <br>\n        <br>\n        <br>\n        <br>\n        <CENTER>\n            <font face=굴림 size=4 color=#000000>\n                <b>\n                    <hr color=#0000ff width=80%>\n                    <FONT color=#000000 size=6>비업무용 인터넷 사이트입니다.\n                    </font>\n                    <br>\n                    <br>\n                    <FONT color=#000000 size=6>(인터넷 접근 통제 시스템)\n                    </font>\n                    <br>\n                    <br>\n\t\t\t\n                </b>업무상으로 접속이 필요한 경우 아래의 방법을 통해 접속 신청을 하실 수 있습니다.\n                <br>\n* 신청방법: 스윙 전자 결재 -> 양식명: 인터넷 접속허용 신청서\n                <br>\n                <br>\n                <br> 접속자IP\n                <br>\n                <script>document.write (getIP());</script>\n                <br> 접속차단 URL\n                <br>\n                <script>document.write (getURL());</script>\n                <br> 접속 차단 분류\n                <br>\n                <script>document.write (getCategory());</script>\n                <br>\n\n\t\t\t\n            </b>문의처: 정보보호본부 (02-2151-8886)\n            <br>\n            <br>\n            <hr color=#0000ff width=80%>\n\t\t\t\n        </font>\n    </CENTER>\n</BODY>\n</html>\n<script>\n\t\t\t\tif(document.getElementById('redirect')){\n\t\t\t\t\tvar redirect = document.getElementById('redirect');\n\t\t\t\t\tvar attrHref = document.getElementById('redirect').getAttribute('href');\n\t\t\t\t\tredirect.innerText = getURL();\n\t\t\t\t\tfunction doRedirect(){\n\t\t\t\t\t\tvar url = getURL();\n\t\t\t\t\t\tvar link = attrHref + 'https://' + url;\n\t\t\t\t\t\tlocation.href=link;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\t</script>"
+						}
+					]
 				},
 				{
 					"name": "3.0 International Label Payment",
